@@ -18,7 +18,7 @@ deploy:
     - 5432
     
 volumes:
-  - claim: postgress-slave-data-eass
+  - claim: postgres-slave-data-eass
     mount: /appz/data
     name: data
     
