@@ -1,6 +1,6 @@
 app:
     name: Postgres Slave
-    code: POSTGRES2
+    code: POSTGRESSLAVE
     notify: appzdev@cloudbourne.co
     
 build:
@@ -9,10 +9,11 @@ build:
     build_file: none
     output_files: output/*.zip
     image_template: postgres_slave-12.2
-    image_name: ea-sharedservices/postgres_slave
+    image_name: alpha/postgres_slave
     
 deploy:
-    context: EA-SharedServices/DEV
+    context: alpha/DEV
+    type: stateful
     replicas: 1
     port:
     - 5432
@@ -21,6 +22,9 @@ volumes:
   - claim: postgres-slave-data
     mount: /appz/data
     name: data
+    size: 5Gi
+    mode: ReadWriteOnce
+    class: microk8s-hostpath    
     
 monitor:
     notify: appzops@cloudbourne.co      
