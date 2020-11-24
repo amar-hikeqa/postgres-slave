@@ -38,6 +38,6 @@ properties:
     POSTGRESQL_REP_USER: replica    
     PGPASSWORD: 
       vault: PGPASSWORD 
-    POSTGRESQL_MASTER_HOST: postgres-master-12-2
+    POSTGRESQL_MASTER_HOST: postgres-sonarqube-12-2
     POSTGRESQL_MASTER_PORT: 5432    
     revision : 27
