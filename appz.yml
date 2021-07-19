@@ -9,10 +9,10 @@ build:
     build_file: none
     output_files: output/*.zip
     image_template: postgres_slave-12.2
-    image_name: alpha/postgres_slave
+    image_name: amar-hikeqa/postgres_slave
     
 deploy:
-    context: alpha/DEV
+    context: amar-hikeqa/DEV
     type: statefulset
     replicas: 1
     port:
